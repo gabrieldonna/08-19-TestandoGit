@@ -22,7 +22,9 @@ const Login = () => {
             placeholder="email"
             style={styles.input}
             />
-
+          </View>  
+          
+        <View style={styles.formContainer}>
             <TextInput
             placeholder="password"
             secureTextEntry
