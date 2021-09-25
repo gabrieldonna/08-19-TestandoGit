@@ -2,9 +2,20 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacityBase, TouchableOpacity,  } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { styles } from './styles';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import { StackNavigatorParamList } from '../../../types';
 
+type HomeProps = NativeStackNavigationProp<StackNavigatorParamList, "Login">;
 
 const Login = () => {
+
+    const navigation = useNavigation<HomeProps>();
+
+    function irParaTelaHome(){
+        navigation.navigate('Home');
+    }
+
     return(  
         <View style={styles.container}>
             <Text style={styles.title}>Facebook</Text>
@@ -30,8 +41,10 @@ const Login = () => {
             secureTextEntry
             style={styles.input}
             />
-
-            <TouchableOpacity style={styles.buttonContainer}>
+         </View>
+            
+        <View>
+            <TouchableOpacity style={styles.buttonContainer} onPress={irParaTelaHome}>
                 <Text style={styles.buttonText}>Log in</Text>
             </TouchableOpacity>
             </View>

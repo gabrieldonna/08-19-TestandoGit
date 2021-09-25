@@ -61,11 +61,11 @@ const Home = () => {
             <LinksImportantes />
             <StatusBar style="auto"  />
             <Post />
-            {/* <View style={styles.conteudoFacebook}>
+            <View style={styles.conteudoFacebook}>
                 <TouchableOpacity style={styles.meubotao} onPress={irParaTelaLogin}>
                     <Text style={styles.meubotaoTexto}>Ir para segunda tela</Text>
                 </TouchableOpacity>
-            </View> */}
+            </View> 
         </View>
     );
 }
