@@ -4,6 +4,8 @@ export const styles = StyleSheet.create({
   container: {
       flex:1,
       backgroundColor: "#4369B0",
+      justifyContent:'center',
+      marginHorizontal:80,
   },
   title:{
       width:218.42,
@@ -61,7 +63,10 @@ export const styles = StyleSheet.create({
     height: 50,
   },
   input:{
-
+    borderRadius:5,
+    backgroundColor:'#2C4877',
+    fontSize:15,
+    color: '#F5FFFF',
   },
   link:{
       color: "#FFFFFF",

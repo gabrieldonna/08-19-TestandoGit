@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text , StyleSheet, Image} from 'react-native';
+import {View, Text , StyleSheet, Image , TouchableOpacity} from 'react-native';
+
 const Post = ()=>{
     return(
         <View style={styles.container}>
@@ -13,7 +14,7 @@ const Post = ()=>{
                         <Text>2hrs</Text>
                         <Image style={styles.imagem}  source={require('../../assets/globo.png')}/>
                     </View>
-
+            
                 </View>
             </View>
             <View style={styles.textoPostPublicado}>
@@ -24,15 +25,13 @@ const Post = ()=>{
                 </Text>
                 <Image style={styles.imagemPost}  source={require('../../assets/post.png')}></Image>
             </View>
-
             <View style={styles.likes}>
                 <Image source={require('../../assets/likes.png')}/>
                 <Text style={styles.likesTexto}>12</Text>
             </View>
-
             <View style={styles.linksShare}>
                 <View style={styles.linksShareBloco}>
-                    <Image source={require('../../assets/like.png')}/>
+                    <Image style={styles.linksShareBlocoIcone} source={require('../../assets/like.png')}/>
                     <Text style={styles.likesTexto}>Like</Text>
                 </View>
                 <View style={styles.linksShareBloco}>
@@ -44,8 +43,20 @@ const Post = ()=>{
                     <Text style={styles.likesTexto}>Compartilhar</Text>
                 </View>
 
-            </View>
 
+            </View>
+            <View style={styles.footerPost}>
+                <TouchableOpacity style={styles.btnLearMore}>
+                    <Text style={styles.btnLearMoreText}> Learn More</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnMensagem}>
+                    <Image style={{width:16,height:16}} source={require('../../assets/btnmensagem.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn3Pontos}>
+                    <Image style={{height:3,width:16}}  source={require('../../assets/3pontos.png')}/>
+                </TouchableOpacity>
+
+            </View>
 
         </View>
     );
@@ -108,6 +119,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         marginHorizontal:20,
         marginTop:10,
+        marginVertical:20,
     },
     linksShareBloco:{
         flexDirection:'row',
@@ -116,5 +128,40 @@ const styles = StyleSheet.create({
     linksShareBlocoIcone:{
         width:18,
         height:18,
-    }
-});
+    },
+    footerPost:{
+        height:43,
+        flexDirection:'row',
+
+    },
+    btnLearMore:{
+        flex:8,
+        backgroundColor:'#3D7BE2',
+        borderRadius:5,
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    btnMensagem:{
+        flex:2,
+        marginLeft:10,
+        backgroundColor:'#3D7BE2',
+        borderRadius:5,
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    btn3Pontos:{
+        flex: 2,
+        marginLeft:10,
+        borderWidth:2,
+        borderColor:'#3D7BE2',
+        borderRadius:5,
+        justifyContent:'center',
+        alignItems:'center',
+
+    },
+    btnLearMoreText:{
+        color:"#FDF7FD",
+        fontSize:16,
+    },
+
+})
